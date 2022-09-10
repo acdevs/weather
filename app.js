@@ -80,7 +80,7 @@ const app = {
       <div class="title">
         <div class="material-icon"><img src="http://www.gstatic.com/images/icons/material/apps/weather/2x/${
           icons[get.weather[0].icon]
-        }_light_color_96dp.png"></img></div>
+        }_light_color_96dp.png" draggable="false"></img></div>
         <div class="temp">${get.main.temp.toFixed(0)}°</div>
       </div>
       <div class="subtitle">
