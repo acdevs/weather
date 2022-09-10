@@ -31,7 +31,7 @@ var lang = 'en';
 var units = 'metric';
 
 const fetch_city = (city) =>{
-  url = `http://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${key}&units=${units}&lang=${lang}`;
+  url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${key}&units=${units}&lang=${lang}`;
   app.fetchWeather(url);
 }
 
@@ -73,7 +73,7 @@ const app = {
       //got position
       lat = position.coords.latitude.toFixed(2);
       lon = position.coords.longitude.toFixed(2);
-      url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`;
+      url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`;
       app.fetchWeather(url);
     },
     wtf: (err) => {
@@ -88,7 +88,7 @@ const app = {
       date = week[raw_date.getDay()] + ", " + month[raw_date.getMonth()] + " " + raw_date.getDate();
       
       //weather icon
-      icon_url = `http://www.gstatic.com/images/icons/material/apps/weather/2x/${icons[get.weather[0].icon]}_light_color_96dp.png`;
+      icon_url = `https://www.gstatic.com/images/icons/material/apps/weather/2x/${icons[get.weather[0].icon]}_light_color_96dp.png`;
       
       //fav-icon
       var favicon = document.querySelector("link[rel~='icon']");
