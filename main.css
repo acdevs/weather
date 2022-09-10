@@ -21,7 +21,7 @@ body{
   margin-left: -200px;
   margin-top: -150px;
   border-radius: 15px;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
 }
 .title{
   display: flex;
@@ -32,16 +32,16 @@ body{
   flex-grow: 1;
 }
 .title .temp{
-  font-size: 100px;
+  font-size: 105px;
   padding: 10px 0s;
 }
-.title .material-symbols-rounded{
-  font-size: 100px;
-  padding:20px 0;
+.title .material-icon img{
+  width: 120px;
+  padding: 15px 30px;
 }
 .subtitle{
   display: flex;
-  margin-top:-25px;
+  margin-top:-15px;
 }
 .subtitle div{
   width:180px;
@@ -53,8 +53,9 @@ body{
   font-weight: bold;
 }
 .card-date{
-  padding: 10px 30px 0 25px;
+  padding: 10px 25px 0 20px;
   font-size: 20px;
+  font-weight: bold;
 }
 .description{
   display: flex;
@@ -72,7 +73,8 @@ body{
 }
 .feels-like{
   color:rgba(255, 255, 255, 0.783);
-  font-size: 15px;
+  font-size: 18px;
+  letter-spacing: .5px;
 }
 .border{
   margin: 25px 0 10px 0;
@@ -97,7 +99,7 @@ body{
 }
 .card-text{
   font-size: 18px;
-  padding:2.5px;
+  padding:2.5px 0 0 0;
   text-align: left;
 }
 .card-box .material-symbols-rounded{
@@ -105,5 +107,5 @@ body{
   text-align: right;
 }
 .card-box div{
-  margin: 10px 0;
+  margin: 10px 0 0 0;
 }

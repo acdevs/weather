@@ -3,17 +3,28 @@ var lon;
 var month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 var week = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 var icons = {
-  'Clouds' : 'cloudy',
-  'Clear' : 'sunny',
-  'Dust' : 'water',
-  'Fog' : 'water',
-  'Mist' : 'water',
-  'Haze' : 'water',
-  'Smoke' : 'water',
-  'Snow' : 'ac_unit',
-  'Rain' : 'rainy',
-  'Drizzle' : 'rainy',
-  'Thunderstorm' : 'thunderstorm'
+  '02d' : 'mostly_sunny',
+  '02n' : 'mostly_clear_night',
+  '03d' : 'partly_cloudy',
+  '03n' : 'partly_cloudy_night',
+  '04d' : 'mostly_cloudy_day',
+  '04n' : 'mostly_cloudy_night',
+
+  '01d' : 'sunny',
+  '01n' : 'clear_night',
+
+  '50d' : 'haze_fog_dust_smoke',
+  '50n' : 'haze_fog_dust_smoke',
+
+  '10d' : 'sscattered_showers_day',
+  '10n' : 'scattered_showers_night',
+  '13d' : 'snow_showers_snow',
+  '13n' : 'snow_showers_snow',
+  '09d' : 'heavy_rain',
+  '09n' : 'heavy_rain',
+
+  '11d' : 'isolated_scattered_tstorms_day',
+  '11n' : 'isolated_scattered_tstorms_night'
 }
 const app = {
     init: () => {
@@ -67,7 +78,9 @@ const app = {
       card.innerHTML = `
     <div class="card">
       <div class="title">
-        <div class="material-symbols-rounded">${icons[get.weather[0].main]}</div>
+        <div class="material-icon"><img src="http://www.gstatic.com/images/icons/material/apps/weather/2x/${
+          icons[get.weather[0].icon]
+        }_light_color_96dp.png"></img></div>
         <div class="temp">${get.main.temp.toFixed(0)}°</div>
       </div>
       <div class="subtitle">
@@ -78,7 +91,7 @@ const app = {
         <div class="desc feels-what">${get.weather[0].description}</div>
       </div>
       <div class="description">
-        <div class="desc feels-like">feels like ${get.main.feels_like.toFixed(1)}°</div>
+        <div class="desc feels-like">feels like ${get.main.feels_like.toFixed(0)}°</div>
       </div>
       <div class="border"></div>
       <div class="card-footer">
