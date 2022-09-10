@@ -1,5 +1,3 @@
-var lat;
-var lon;
 var month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 var week = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 var icons = {
@@ -16,7 +14,7 @@ var icons = {
   '50d' : 'haze_fog_dust_smoke',
   '50n' : 'haze_fog_dust_smoke',
 
-  '10d' : 'sscattered_showers_day',
+  '10d' : 'scattered_showers_day',
   '10n' : 'scattered_showers_night',
   '13d' : 'snow_showers_snow',
   '13n' : 'snow_showers_snow',
@@ -26,16 +24,25 @@ var icons = {
   '11d' : 'isolated_scattered_tstorms_day',
   '11n' : 'isolated_scattered_tstorms_night'
 }
+var lat;
+var lon;
+var key = '79de42b4834d68ba251b59998c5338bb';
+var lang = 'en';
+var units = 'metric';
+
+const fetch_city = (city) =>{
+  url = `http://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${key}&units=${units}&lang=${lang}`;
+  app.fetchWeather(url);
+}
+
+var card = document.getElementById('fetch');
 const app = {
+
     init: () => {
       app.getLocation();
     },
-    fetchWeather: (ev) => {
-      //use the values from latitude and longitude to fetch the weather
-      let key = '79de42b4834d68ba251b59998c5338bb';
-      let lang = 'en';
-      let units = 'metric';
-      let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`;
+
+    fetchWeather: (url) => {
       //fetch the weather
       fetch(url)
         .then((resp) => {
@@ -47,6 +54,12 @@ const app = {
         })
         .catch(console.err);
         document.title = "Unservicable!";
+        card.innerHTML = `
+        <div class="error">
+          <img src="https://docs.google.com/uc?export=download&id=1NHhykWj9QBuTXPYfgeTpxjOSQ6l4Wopx" draggable="false">
+          <div>Mewww ?!</div>
+        </div>
+        `;
     },
     getLocation: (ev) => {
       let opts = {
@@ -60,19 +73,18 @@ const app = {
       //got position
       lat = position.coords.latitude.toFixed(2);
       lon = position.coords.longitude.toFixed(2);
-      app.fetchWeather();
+      url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`;
+      app.fetchWeather(url);
     },
     wtf: (err) => {
       //geolocation failed
       console.error(err);
     },
     showWeather: (resp) => {
-      console.log(resp);
-      let card = document.getElementById('container');
       get = resp;
       document.title = get.name;
       //get date
-      let raw_date = new Date();
+      let raw_date = new Date(get.dt * 1000);
       date = week[raw_date.getDay()] + ", " + month[raw_date.getMonth()] + " " + raw_date.getDate();
       
       //weather icon
@@ -84,7 +96,6 @@ const app = {
 
       //show the content
       card.innerHTML = `
-    <div class="card">
       <div class="title">
         <div class="material-icon"><img src="${icon_url}" draggable="false"></img></div>
         <div class="temp">${get.main.temp.toFixed(0)}°</div>
@@ -114,7 +125,6 @@ const app = {
           <div class="card-text">${get.wind.speed}m/s</div>
         </div>
       </div>
-    </div>
       `;
     },
   };

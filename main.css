@@ -15,13 +15,43 @@ body{
   color:rgb(255,255,255);
   background-color: rgb(17, 24, 39);
   width: 400px;
-  height: fit-content;
   left:50%;
-  top:50%;
   margin-left: -200px;
+  border-radius: 30px;
+  padding: 20px;
+}
+.body{
+  height: fit-content;
+  top:50%;
   margin-top: -150px;
-  border-radius: 15px;
-  padding: 20px 20px 20px 20px;
+}
+.search{
+  height: 60px;
+  margin-top: -100px;
+  padding: 5px;
+  border-radius: 30px;
+}
+.search input{
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  color:rgba(255, 255, 255, 0.879);
+  background-color: rgb(17, 24, 39);
+  width: 390px;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size:20px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  caret-color: rgba(255, 255, 255, 0.717);
+  cursor: pointer;
+}
+
+::placeholder{
+  color:rgba(255, 255, 255, 0.361);
 }
 .title{
   display: flex;
@@ -107,5 +137,21 @@ body{
   text-align: right;
 }
 .card-box div{
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
+}
+.error{
+  text-align: center;
+}
+.error img{
+  display: block;
+  width:100%;
+}
+.error div{
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size:25px;
+  font-weight: bold;
+  margin-top:-60px;
+  margin-bottom: 50px;
+  color:rgba(255, 255, 255, 0.842);
 }
