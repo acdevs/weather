@@ -74,13 +74,19 @@ const app = {
       //get date
       let raw_date = new Date();
       date = week[raw_date.getDay()] + ", " + month[raw_date.getMonth()] + " " + raw_date.getDate();
+      
+      //weather icon
+      icon_url = `http://www.gstatic.com/images/icons/material/apps/weather/2x/${icons[get.weather[0].icon]}_light_color_96dp.png`;
+      
+      //fav-icon
+      var favicon = document.querySelector("link[rel~='icon']");
+      favicon.href = icon_url;
 
+      //show the content
       card.innerHTML = `
     <div class="card">
       <div class="title">
-        <div class="material-icon"><img src="http://www.gstatic.com/images/icons/material/apps/weather/2x/${
-          icons[get.weather[0].icon]
-        }_light_color_96dp.png" draggable="false"></img></div>
+        <div class="material-icon"><img src="${icon_url}" draggable="false"></img></div>
         <div class="temp">${get.main.temp.toFixed(0)}°</div>
       </div>
       <div class="subtitle">
