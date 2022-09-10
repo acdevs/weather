@@ -56,7 +56,7 @@ const app = {
         document.title = "Unservicable!";
         card.innerHTML = `
         <div class="error">
-          <img src="https://docs.google.com/uc?export=download&id=1NHhykWj9QBuTXPYfgeTpxjOSQ6l4Wopx" draggable="false">
+          <img src="https://raw.githubusercontent.com/acdevs/weather/main/something-went-wrong.png" draggable="false">
           <div>Mewww ?!</div>
         </div>
         `;

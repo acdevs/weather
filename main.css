@@ -49,6 +49,10 @@ body{
   caret-color: rgba(255, 255, 255, 0.717);
   cursor: pointer;
 }
+.search input::-webkit-search-cancel-button{
+  position:relative;
+  display: none;  
+}
 
 ::placeholder{
   color:rgba(255, 255, 255, 0.361);
