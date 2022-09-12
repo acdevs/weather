@@ -1,5 +1,5 @@
 *{
-  user-select: none;
+  user-select:none;
 }
 div{
   position: relative;
@@ -8,7 +8,7 @@ div{
 body{
   margin: 0;
   background-color: rgb(31, 41, 55);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Comfortaa', cursive;
 }
 .card{
   position:absolute;
@@ -41,7 +41,7 @@ body{
   height: 50px;
   border-radius: 25px;
   padding: 0 25px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Comfortaa', cursive;
   font-size:20px;
   font-weight: bold;
   text-align: center;
@@ -67,7 +67,7 @@ body{
 }
 .title .temp{
   font-size: 105px;
-  padding: 10px 0s;
+  padding: 15px 0 0 0;
 }
 .title .material-icon img{
   width: 120px;
@@ -87,9 +87,10 @@ body{
   font-weight: bold;
 }
 .card-date{
-  padding: 10px 25px 0 20px;
+  padding: 5px 30px 0 0;
   font-size: 20px;
   font-weight: bold;
+  font-family: 'Comfortaa', cursive;
 }
 .description{
   display: flex;
@@ -98,8 +99,10 @@ body{
   width:180px;
   flex:180px auto;
   text-align: center;
+  padding: 2.5px 0;
 }
 .feels-what{
+  margin:5px 0 0 0;
   color:rgba(255, 255, 255, 0.904);
   font-size: 20px;
   font-weight: bold;
@@ -109,6 +112,7 @@ body{
   color:rgba(255, 255, 255, 0.783);
   font-size: 18px;
   letter-spacing: .5px;
+  font-family: 'Comfortaa', cursive;
 }
 .border{
   margin: 25px 0 10px 0;
@@ -132,12 +136,16 @@ body{
   text-align: center;
 }
 .card-text{
-  font-size: 18px;
-  padding:2.5px 0 0 0;
+  font-size: 20px;
   text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 .card-box .material-symbols-rounded{
   font-size: 30px;
+  text-align: center;
+}
+.card-box:nth-of-type(2) .material-symbols-rounded{
   text-align: right;
 }
 .card-box div{
@@ -152,7 +160,6 @@ body{
 }
 .error div{
   display: block;
-  font-family: 'Poppins', sans-serif;
   font-size:25px;
   font-weight: bold;
   margin-top:-60px;
