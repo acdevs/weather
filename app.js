@@ -114,7 +114,7 @@ const app = {
       <div class="card-footer">
         <div class="card-box">
           <div class="material-symbols-rounded">speed</div>
-          <div class="card-text">${get.main.pressure}mb</div>
+          <div class="card-text">${get.main.pressure}hPa</div>
         </div>
         <div class="card-box">
           <div class="material-symbols-rounded">humidity_mid</div>
