@@ -1,2 +1,2 @@
-### Get Weather details @ City
+### Get Current Weather details @ City
 Weather_api : `api.openweather.org`
