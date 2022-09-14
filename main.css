@@ -165,3 +165,63 @@ body{
   margin-bottom: 50px;
   color:rgba(255, 255, 255, 0.842);
 }
+
+@media only screen  and (max-width: 500px){
+
+  .card{
+    width: 95vw;
+    left: 50vw;
+    margin-left: -47.5vw;
+    border-radius: 30px;
+    padding: 3vw;
+  }
+  .body{
+    top:50vh;
+    margin-top: -25vh;
+  }
+  .search{
+    width: 95vw;
+    height: 16vw;
+    left: 50vw;
+    margin-left: -50.5vw;
+    margin-top: -100px;
+    padding: 1vw;
+    border-radius: 30px;
+  }
+  .search input{
+    width: 100%;
+    height: 100%;
+  }
+  .border{
+    width: 95vw;
+    margin-left:-3vw;
+  }
+  .title div{
+    width:43.5vw;
+  }
+  .title .temp{
+    font-size: 100px;
+  }
+  .title .material-icon img{
+    width: 120px;
+    padding: 15px 0px;
+  }
+  .subtitle div{
+    width:43.5vw;
+  }
+  .card-date{
+    padding: 5px 0;
+  }
+  .description div{
+    width:43.5vw;
+    flex:43.5vw auto;
+    padding: 2.5px 0;
+  }
+  .feels-what{
+    font-size: 20px;
+  }
+  .card-text{
+    font-size: 18px;
+    padding: 3px 0;
+  }
+}
